@@ -3,22 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Funch</title>
+    <title>Jafu ApS — Product & Software</title>
+    <meta name="description" content="Jafu ApS is a Danish software studio building Recorder and InvisibleHR. CVR DK36978244.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #fafafa;
+            color: #111;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+        }
+
+        /* Header */
+        .header { margin-bottom: 56px; }
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+        .header p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Products */
+        .section-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .products { display: flex; flex-direction: column; gap: 12px; margin-bottom: 56px; }
+
+        .product {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 20px 24px;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .product:hover {
+            border-color: #ccc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .product-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .product-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .product-icon svg { width: 20px; height: 20px; }
+        .product-name {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .product-platform {
+            font-size: 11px;
+            color: #999;
+            margin-left: auto;
+        }
+        .product-desc {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.55;
+        }
+
+        /* About */
+        .about {
+            margin-bottom: 56px;
+        }
+        .about p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+        .about p:last-child { margin-bottom: 0; }
+
+        /* Links */
+        .links {
+            display: flex;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .links a {
+            font-size: 13px;
+            color: #999;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .links a:hover { color: #111; }
+
+        /* Contact */
+        .contact {
+            margin-bottom: 40px;
+        }
+        .contact p {
+            font-size: 13px;
+            color: #555;
+        }
+        .contact a {
+            color: #111;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.15s;
+        }
+        .contact a:hover { border-color: #111; }
+
+        @media (max-width: 480px) {
+            .container { padding: 48px 20px 40px; }
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900 min-h-screen flex items-center justify-center">
-    <div class="max-w-sm mx-auto px-6 text-center">
-        <h1 class="text-2xl font-semibold tracking-tight mb-3">Jacob Funch</h1>
-        <p class="text-gray-500 mb-8">Product & Design — Copenhagen</p>
-        <div class="flex items-center justify-center gap-6 text-sm text-gray-400">
-            <a href="https://github.com/jacobfunch" class="hover:text-gray-900 transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/jacobfunch/" class="hover:text-gray-900 transition-colors">LinkedIn</a>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Jafu ApS</h1>
+            <p>Software studio by Jacob Funch, Copenhagen</p>
+        </div>
+
+        <div class="section-label">Products</div>
+        <div class="products">
+            <div class="product" style="cursor: default;">
+                <div class="product-top">
+                    <div class="product-icon" style="background: #1a1a2e;">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="6" stroke="#ef4444" stroke-width="2"/>
+                            <circle cx="10" cy="10" r="3" fill="#ef4444"/>
+                        </svg>
+                    </div>
+                    <span class="product-name">Demoo</span>
+                    <span class="product-platform" style="color: #c084fc;">Coming soon</span>
+                </div>
+                <p class="product-desc">AI-powered product demo video generator for macOS. Record your screen, get a polished launch video with chapters, zooms, transitions, and text — all generated by AI.</p>
+            </div>
+
+            <a href="https://invisiblehr.app" class="product">
+                <div class="product-top">
+                    <div class="product-icon" style="background: #111; display: flex; align-items: center; justify-content: center;">
+                        <svg width="20" height="20" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="124.5" cy="164.5" r="122.5" fill="#EDEDED"/>
+                            <circle cx="389.5" cy="164.5" r="102.5" stroke="#EDEDED" stroke-width="40"/>
+                            <path d="M2 368C2 334.863 28.8629 308 62 308H103C136.137 308 163 334.863 163 368V409C163 442.137 136.137 469 103 469H2V368Z" fill="#EDEDED"/>
+                            <path d="M184 308H452C485.137 308 512 334.863 512 368V409C512 442.137 485.137 469 452 469H244C210.863 469 184 442.137 184 409V308Z" fill="#EDEDED"/>
+                        </svg>
+                    </div>
+                    <span class="product-name">InvisibleHR</span>
+                    <span class="product-platform">Slack</span>
+                </div>
+                <p class="product-desc">Slack-native PTO and attendance tracking. Your team manages time off without leaving Slack. No dashboards to check, no forms to fill.</p>
+            </a>
+        </div>
+
+        <div class="section-label">About</div>
+        <div class="about">
+            <p>I make tools that save people time they didn't know they were wasting. Most of what I build starts from a problem I ran into myself, then I keep going until it works for everyone else too.</p>
+            <p>Jafu ApS, Copenhagen. CVR DK36978244.</p>
+        </div>
+
+        <div class="section-label">Contact</div>
+        <div class="contact">
+            <p>Reach me at <a href="mailto:jacob@jacobfunch.com">jacob@jacobfunch.com</a></p>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/jacobfunch">GitHub</a>
+            <a href="https://www.linkedin.com/in/jacobfunch/">LinkedIn</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </div>
 </body>
